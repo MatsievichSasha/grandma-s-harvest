@@ -1,0 +1,246 @@
+ * {
+   margin: 0 0;
+   padding: 0 0;
+ }
+
+ body {
+   width: 100%;
+   height: 100%;
+   position: fixed;
+   overflow: hidden
+ }
+
+ article {
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 12%;
+ }
+
+ .slider {
+   width: 80%;
+   height: 100%;
+   margin: 15px auto;
+   padding: 10px 0;
+   overflow: hidden;
+   position: relative;
+ }
+
+ .slider input {
+   display: none;
+ }
+
+ .wrapperFilm {
+   width: 400%;
+   height: 220px;
+ }
+
+ .film {
+   width: auto;
+   height: 100%;
+ }
+
+ .wrapperFilm li {
+   box-sizing: border-box;
+   padding: 10px;
+   list-style-type: none;
+   width: 6.25%;
+   float: left;
+   background-color: white;
+   position: relative;
+ }
+
+ .film::after {
+   content: '';
+   display: block;
+   clear: both;
+ }
+
+ .wrapperImage {
+   display: block;
+   position: relative;
+   height: 220px;
+   overflow: hidden;
+ }
+
+ .images {
+   width: 100%;
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+ }
+
+ .cart {
+   width: 100%;
+   display: none;
+   text-align: justify;
+ }
+
+ li:hover .cart {
+   display: block;
+   z-index: 1;
+ }
+
+ li:hover {
+   background-color: white;
+   box-shadow: 3px 3px 5px 5px rgba(184, 184, 184, 1);
+   z-index: 1;
+ }
+
+ /*radio button switcher*/
+
+ .switch {
+   display: block;
+   position: absolute;
+   width: 108px;
+   top: 250px;
+   left: 50%;
+   transform: translateX(-50%);
+ }
+
+ /* not active label*/
+
+ .switch .switch-img {
+   width: 12px;
+   height: 12px;
+   margin: 0 3px;
+   float: left;
+   border-radius: 7px;
+   cursor: pointer;
+   border: rgb(167, 169, 173) 1.5px solid;
+   box-sizing: border-box;
+ }
+
+ /* active label */
+
+ #button1:checked~.switch .switch-img:nth-child(1), #button2:checked~.switch .switch-img:nth-child(2), #button3:checked~.switch .switch-img:nth-child(3), #button4:checked~.switch .switch-img:nth-child(4), #button5:checked~.switch .switch-img:nth-child(5), #button6:checked~.switch .switch-img:nth-child(6) {
+   border: rgb(111, 154, 240) 3px solid;
+ }
+
+ /* slids images*/
+
+ #button1:checked~.wrapperFilm {
+   margin-left: 0%;
+ }
+
+ #button2:checked~.wrapperFilm {
+   margin-left: -75%;
+ }
+
+ #button3:checked~.wrapperFilm {
+   margin-left: -150%;
+ }
+
+ #button4:checked~.wrapperFilm {
+   margin-left: -225%;
+ }
+
+ #button5:checked~.wrapperFilm {
+   margin-left: -300%;
+ }
+
+ #button6:checked~.wrapperFilm {
+   margin-left: -375%;
+ }
+
+ .wrapperFilm {
+   transition: margin-left 0.7s cubic-bezier(.4, .5, .1, .1);
+ }
+
+ /* Grey Window FullScrean*/
+
+ .full:checked~.greyWindow {
+   background-color: rgb(71, 71, 71);
+   opacity: 0.9;
+   position: fixed;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   z-index: 2;
+ }
+
+ /*button closing cross*/
+
+ .full:checked~.greyWindow #closeGreyWindow {
+   color: rgb(255, 254, 254);
+   cursor: pointer;
+   text-decoration: none;
+   position: absolute;
+   height: 30px;
+   width: 30px;
+   right: 50px;
+   top: 25px;
+ }
+
+ /*button closing cross*/
+
+ .full:checked~.greyWindow #closeGreyWindow::after,
+ .full:checked~.greyWindow #closeGreyWindow::before {
+   display: block;
+   position: absolute;
+   content: '';
+   width: 0.5px;
+   height: 30px;
+   right: 13px;
+   border: 2px solid white;
+   background: white;
+   transform: rotate(0.125turn);
+ }
+
+ /*button closing cross*/
+
+ .full:checked~.greyWindow #closeGreyWindow::before {
+   transform: rotate(-0.125turn);
+ }
+ /*button closing cross*/
+ #closeGreyWindow:hover{
+   transform: scale(1.2);
+ }
+ #closeGreyWindow{
+  transition: transform 0.8s;
+ }
+ /*fullScrean Img*/
+
+ #img1:checked~.wrapperFilm>.film>li #img1Label, 
+ #img2:checked~.wrapperFilm>.film>li #img2Label,
+ #img3:checked~.wrapperFilm>.film>li #img3Label, 
+ #img4:checked~.wrapperFilm>.film>li #img4Label,
+ #img5:checked~.wrapperFilm>.film>li #img5Label, 
+ #img6:checked~.wrapperFilm>.film>li #img6Label,
+ #img7:checked~.wrapperFilm>.film>li #img7Label, 
+ #img8:checked~.wrapperFilm>.film>li #img8Label,
+ #img9:checked~.wrapperFilm>.film>li #img9Label, 
+ #img10:checked~.wrapperFilm>.film>li #img10Label,
+ #img11:checked~.wrapperFilm>.film>li #img11Label, 
+ #img12:checked~.wrapperFilm>.film>li #img12Label,
+ #img13:checked~.wrapperFilm>.film>li #img13Label, 
+ #img14:checked~.wrapperFilm>.film>li #img14Label,
+ #img15:checked~.wrapperFilm>.film>li #img15Label, 
+ #img16:checked~.wrapperFilm>.film>li #img16Label
+ {
+   position: fixed;
+   width: 70%;
+   height: 70%;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 3;
+ }
+
+ 
+ .full:checked~.wrapperFilm .film li{
+  position: static;
+ }
+
+ .full:checked~.fance{
+  background-color: rgb(253, 253, 253);
+  opacity: 0.01;
+  position: fixed;
+  width: 80%;
+  height: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+}
